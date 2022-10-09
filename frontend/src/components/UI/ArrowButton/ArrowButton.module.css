@@ -1,0 +1,45 @@
+.ellips {
+    position: absolute;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: #EBEBEB;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.25);
+    overflow: visible;
+}
+
+.ellips:hover {
+    cursor: pointer;
+}
+
+.ellips:hover:focus {
+    transition: .5s;
+    transform: rotate(360deg);
+}
+
+.arrow {
+    max-width: 52px;
+    max-height: 52px;
+}
+
+.left {
+    top: 45%;
+    left: 12vw;
+}
+
+.arrowLeft {
+    transform: rotate(-90deg);
+}
+
+.right {
+    top: 45%;
+    right: 12vw;
+}
+
+.arrowRight {
+    transform: rotate(90deg);
+}

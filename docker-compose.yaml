@@ -1,0 +1,61 @@
+version: '3.7'
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    environment:
+      DB_CONNECTION: mysql
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_DATABASE: laravel
+      DB_USERNAME: root
+      DB_PASSWORD: root
+    links:
+      - db
+    depends_on:
+      - db
+    ports:
+      - 8000:8000
+    restart: unless-stopped
+    volumes:
+      - ./backend:/app/backend
+    networks:
+      - app
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    tty: true
+    ports:
+      - 3000:3000
+    restart: unless-stopped
+    volumes:
+      - ./frontend:/app/frontend
+    links:
+      - backend
+    depends_on:
+      - backend
+    networks:
+      - app
+
+  db:
+    image: mysql:5.7.22
+    environment:
+      DB_DATABASE: laravel
+      MYSQL_ROOT_PASSWORD: root
+    restart: unless-stopped
+    volumes:
+      - .dbdata:/var/lib/mysql
+      - ./mysql/my.conf:/etc/mysql/my.cnf
+    networks:
+      - app
+
+networks:
+  app:
+    driver: bridge
+
+volumes:
+  dbdata:
+    driver: local

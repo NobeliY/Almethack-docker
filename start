@@ -1,0 +1,9 @@
+#! /bin/bash
+echo "Произвожу запуск приложения."
+docker-compose up --build -d
+sleep 6
+
+#while ! docker exec almethack-docker_backend_1 bash ; do
+#    sleep 1
+#done
+#docker exec almethack-docker_backend_1 /app/backend/migrateDB

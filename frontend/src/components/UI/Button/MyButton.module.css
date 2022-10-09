@@ -1,0 +1,25 @@
+.btn {
+    min-width: 150px;
+    min-height: 40px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 10px;
+    background: #DADBDC;
+    padding: 10px;
+}
+
+.btn a {
+    color: #3E3E3E;
+    text-decoration: none;
+    font-family: 'Euclid Circular A';
+    font-size: 16px;
+}
+
+.btn:hover {
+    cursor: pointer;
+    transition: .25s;
+    transform: scale(1.1);
+}

@@ -1,0 +1,3 @@
+#! /bin/bash
+echo "Произвожу запись таблиц в БД."
+yes | yes | php artisan migrate --seed

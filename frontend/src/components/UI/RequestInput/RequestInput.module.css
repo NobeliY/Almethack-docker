@@ -1,0 +1,12 @@
+.reqInput {
+    display: flex;
+    flex-direction: column;
+}
+
+.reqInput input {
+    width: 300px;
+    height: 40px;
+    border: 1px solid #B6B6B6;
+    background: #fff;
+    padding: 10px;
+}
